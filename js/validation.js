@@ -14,55 +14,55 @@ function setMaxDate() {
     document.getElementById("datepicker").setAttribute("max", today);
 }
 
-function validate() {
-    var inpObj = document.getElementById("firstName");
-    if (!inpObj.checkValidity()) {
-        document.getElementById("firstNameErr").innerHTML = "Вводить можно только буквы (длина 2-20 символов)";
-    } else {
-        document.getElementById("firstNameErr").innerHTML = "";
-    }
-    inpObj = document.getElementById("lastName");
-    if (!inpObj.checkValidity()) {
-        document.getElementById("lastNameErr").innerHTML = "Вводить можно только буквы (длина 2-20 символов)";
-    } else {
-        document.getElementById("lastNameErr").innerHTML = "";
-    }
-    inpObj = document.getElementById("email");
-    if (!inpObj.checkValidity()) {
-        document.getElementById("emailErr").innerHTML = "Email введен в неверном формате";
-    } else {
-        document.getElementById("emailErr").innerHTML = "";
-    }
-    inpObj = document.getElementById("userName");
-    if (!inpObj.checkValidity()) {
-        document.getElementById("userNameErr").innerHTML = "Вводить можно только латинские буквы (длина 5-12 символов)";
-    } else {
-        document.getElementById("userNameErr").innerHTML = "";
-    }
-    inpObj = document.getElementById("password");
-    if (!inpObj.checkValidity()) {
-        document.getElementById("passwordErr").innerHTML = "Пароль должен иметь хотя бы 1 цифру, 1 строчную, 1 прописную латинскую букву (длина 8-16 символов)";
-    } else {
-        document.getElementById("passwordErr").innerHTML = "";
-    }
-}
+(function() {
+    'use strict'
+    window.addEventListener('load', function() {
+        var forms = document.getElementsByClassName('needs-validation')
+        Array.prototype.filter.call(forms, function(form) {
+            form.addEventListener('submit', function(event) {
+                if (form.checkValidity() === false) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
 
-// (function() {
-//     'use strict'
-//     window.addEventListener('load', function() {
-//         var forms = document.getElementsByClassName('needs-validation')
-//         Array.prototype.filter.call(forms, function(form) {
-//             form.addEventListener('submit', function(event) {
-//                 if (form.checkValidity() === false) {
-//                     event.preventDefault()
-//                     event.stopPropagation()
-//                 }
+                form.classList.add('was-validated')
+            }, false)
+        })
+    }, false)
+})()
 
-//                 form.classList.add('was-validated')
-//             }, false)
-//         })
-//     }, false)
-// })()
+// function validate() {
+//     var inpObj = document.getElementById("firstName");
+//     if (!inpObj.checkValidity()) {
+//         document.getElementById("firstNameErr").innerHTML = "Вводить можно только буквы (длина 2-20 символов)";
+//     } else {
+//         document.getElementById("firstNameErr").innerHTML = "";
+//     }
+//     inpObj = document.getElementById("lastName");
+//     if (!inpObj.checkValidity()) {
+//         document.getElementById("lastNameErr").innerHTML = "Вводить можно только буквы (длина 2-20 символов)";
+//     } else {
+//         document.getElementById("lastNameErr").innerHTML = "";
+//     }
+//     inpObj = document.getElementById("email");
+//     if (!inpObj.checkValidity()) {
+//         document.getElementById("emailErr").innerHTML = "Email введен в неверном формате";
+//     } else {
+//         document.getElementById("emailErr").innerHTML = "";
+//     }
+//     inpObj = document.getElementById("userName");
+//     if (!inpObj.checkValidity()) {
+//         document.getElementById("userNameErr").innerHTML = "Вводить можно только латинские буквы (длина 5-12 символов)";
+//     } else {
+//         document.getElementById("userNameErr").innerHTML = "";
+//     }
+//     inpObj = document.getElementById("password");
+//     if (!inpObj.checkValidity()) {
+//         document.getElementById("passwordErr").innerHTML = "Пароль должен иметь хотя бы 1 цифру, 1 строчную, 1 прописную латинскую букву (длина 8-16 символов)";
+//     } else {
+//         document.getElementById("passwordErr").innerHTML = "";
+//     }
+// }
 
 // function valid() {
 //     // var numbers = /^[0-9][0-9\s]*$/;

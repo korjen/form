@@ -13,23 +13,27 @@
 
 <body onload="setMaxDate()">
     <div class="container">
-        <form class="form-horizontal" action="" name="inputForm" id="inputForm">
+        <form class="form-horizontal needs-validation" action="" name="inputForm" id="inputForm" novalidate>
             <div class="row">
                 <div class="col-sm-6">
                     <label for="firstName">Имя</label>
                     <input type="text" class="form-control" id="firstName" placeholder="Имя" pattern="[A-Za-z-А-Яа-я]{2,20}" value="" required>
-                    <p id="firstNameErr"></p>
-                    <!-- <div class="invalid-feedback">
-                        Имя не было введено
-                    </div> -->
+                    <div class="invalid-feedback">
+                        Имя введено неверно
+                    </div>
+                    <div class="valid-feedback">
+
+                    </div>
                 </div>
                 <div class="col-sm-6">
                     <label for="lastName">Фамилия</label>
                     <input type="text" class="form-control" id="lastName" placeholder="Фамилия" pattern="[A-Za-z-А-Яа-я]{2,20}" value="" required>
-                    <p id="lastNameErr"></p>
-                    <!-- <div class="invalid-feedback">
-                        Фамилия не была введена
-                    </div> -->
+                    <div class="invalid-feedback">
+                        Фамилия введена неверно
+                    </div>
+                    <div class="valid-feedback">
+
+                    </div>
                 </div>
             </div>
 
@@ -37,9 +41,12 @@
                 <label class="control-label col-sm-2" for="date">Дата рождения:</label>
                 <div class="col-sm-6">
                     <input type="date" class="form-control datepicker" id="datepicker" placeholder="дд/мм/гггг" min='1870-01-01' required>
-                    <!-- <div class="invalid-feedback">
-                        Дата рождения не была введена
-                    </div> -->
+                    <div class="invalid-feedback">
+                        Дата рождения введена неверно
+                    </div>
+                    <div class="valid-feedback">
+
+                    </div>
                 </div>
             </div>
 
@@ -47,10 +54,12 @@
                 <label class="control-label col-sm-2" for="email">Email:</label>
                 <div class="col-sm-6">
                     <input type="email" class="form-control" id="email" placeholder="name@example.com" pattern="^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$" required>
-                    <p id="emailErr"></p>
-                    <!-- <div class="invalid-feedback">
-                        Email введен неверно
-                    </div> -->
+                    <div class="invalid-feedback">
+                        Email введен в неверном формате
+                    </div>
+                    <div class="valid-feedback">
+
+                    </div>
                 </div>
             </div>
 
@@ -58,10 +67,12 @@
                 <label class="control-label col-sm-2" for="userName">Имя пользователя:</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" id="userName" placeholder="Имя пользователя (5-12 символов)" pattern="[A-Za-z]{5,12}" required>
-                    <p id="userNameErr"></p>
-                    <!-- <div class="invalid-feedback">
-                        Имя пользователя не было введено
-                    </div> -->
+                    <div class="invalid-feedback">
+                        Имя пользователя введено неверно (вводить можно только латинские буквы (длина 5-12 символов))
+                    </div>
+                    <div class="valid-feedback">
+
+                    </div>
                 </div>
             </div>
 
@@ -70,9 +81,12 @@
                 <div class="col-sm-6">
                     <input type="password" class="form-control" id="password" placeholder="Пароль (8-16 символов)" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}" required>
                     <p id="passwordErr"></p>
-                    <!-- <div class="invalid-feedback">
-                        Пароль не был введен
-                    </div> -->
+                    <div class="invalid-feedback">
+                        Пароль введен неверно (должен иметь хотя бы 1 цифру, 1 строчную, 1 прописную латинскую букву (длина 8-16 символов))
+                    </div>
+                    <div class="valid-feedback">
+
+                    </div>
                 </div>
             </div>
             </br>
